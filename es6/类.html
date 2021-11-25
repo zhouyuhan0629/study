@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Star {
+          //constructor是类的构造函数，用于传递参数，返回实例对象
+            constructor(uname,age){
+                this.uname=uname;
+                this.age=age
+
+            }
+            sing(song) {
+                console.log(this.uname+song);
+            }
+        }
+        var ldh = new Star('liudehua',18)
+        ldh.sing('bingyu')
+        //类里面所有函数不用加function
+        //类里面的各种方法之间不需要加逗号
+    </script>
+
+</body>
+
+</html>

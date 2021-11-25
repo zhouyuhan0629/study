@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="vue.js"></script>
+    <style>
+        button {
+            width: 50px;
+            height: 50px;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="app">{{msg.split('').reverse().join('&')}}
+        {{'count的值是'+count}}
+        <button v-on:click="addcount(2)" @click="changecolor" ></button>
+        <p v-if='jojo<0.5'>小于0.5</p>
+        <p v-else>大于0.5</p>
+   
+   
+    </div>
+
+
+    <script>
+        const app = new Vue({
+            el:'#app',
+            data:{
+                msg:'abc',
+                count:0,
+                jojo:Math.random()
+            },
+            methods:{
+                addcount(type){
+                    console.log(this.count+type)
+                },
+                changecolor(e){
+                   
+                }
+            }
+
+        })
+
+    </script>
+</body>
+</html>
