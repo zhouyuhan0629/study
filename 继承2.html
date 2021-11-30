@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 当儿子继承父亲，调用一个方法的时候，儿子有就用儿子的，儿子没有用父亲的
+        //如果两个都有同一个名称的方法，非想用父亲的方法的话就super.函数名（）
+        class Father {
+            constructor(x,y){
+                this.x=x;
+                this.y=y
+            }
+            sum(){
+                return this.x+this.y;
+            }
+        }
+        class Son extends Father {
+            constructor(x,y){
+                super(x,y);//super一定要写在子类参数的前面！
+                
+                this.x=x;
+                this.y=y
+
+            }
+
+            
+        }
+        var son =new Son(1,2)
+        console.log(son.sum()); 
+       
+    </script>
+</body>
+</html>

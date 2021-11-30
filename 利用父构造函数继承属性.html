@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+    function Father (name,age){
+            this.name=name
+            this.age=age
+
+    }
+
+    function Son (name,age){
+            Father.call(this,name,age)
+
+    }
+    //call把father的this换成了指向son的调用者
+
+    //怎么让son继承father的方法呢？
+    //son.prototype=father.prototype   是不行滴，因为会让son的方法在改变时同时把father的也给变了
+    //只能son.prototype=new father(),这样的话father的实例对象是可以用father的原型对象方法的，但却不会修改father的原型对象方法，
+    //不过要记得加上constructor指回原来的构造函数son，不然就指的是father了，因为整个son的原型对象被替换了
+
+    var son = new Son('dd',23)
+    console.log(
+        son
+    );
+</script>
+</body>
+</html>

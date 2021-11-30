@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button></button>
+    <script>
+        class Star {
+          //constructor是类的构造函数，用于传递参数，返回实例对象
+            constructor(uname,age){
+                this.uname=uname;
+                this.age=age
+                this.btn.onclick=this.sing//sing 后面不加（），加了的话就是立即调用的意思了
+                //constructor里面的this指实例对象
+
+            }
+            sing(song) {
+                //sing因为是btn调用的，所以this指向btn
+                console.log(this.uname+song);
+                //this指向的是这个实例化对象，方法的调用者只用uname代表是函数中的没有定义，共有的属性方法一定加this
+            }
+        }
+        var ldh = new Star('liudehua',18)
+        ldh.sing('bingyu')
+        //类里面所有函数不用加function
+        //类里面的各种方法之间不需要加逗号
+    </script>
+
+</body>
+
+</html>

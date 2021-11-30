@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Gouzao(name, age) {
+            this.name = name
+            this.age = age
+
+        }
+        Gouzao.prototype.sing = function () {
+            console.log('aaa');
+        }
+        var ldh = new Gouzao('liudehua', 18)
+        var zxy = new Gouzao('zhangxueyou', 19)
+        ldh.sing()
+        console.log(ldh);
+        console.log(Gouzao.prototype);
+
+        //如果说直接把prototype覆盖掉(如下)，那么constructor这个属性就没有了，就需要手动的指回constructor
+        // Gaozao.prototype = {
+            // constructor:Gouzao   就是添加这句，注意是冒号
+        //     sing:function() {
+
+        //     },
+        //     dance:function() {
+
+        //     }
+        // }
+            Array.prototype.sum=function(){
+                var sum=0
+                for (var i=0;i<this.length;i++){
+                    sum+=this[i]
+                }
+                return sum
+            }
+            var arr=[1,2,3]
+            console.log(arr.sum())
+            //利用Array自定义一个公用的方法，prototype里this指向的是实例对象，不能用array.prototype={},不能直接覆盖
+    </script>
+
+</html>
