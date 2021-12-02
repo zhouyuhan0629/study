@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <ul>
+        <li>臭豆腐</li>
+        <li>鲱鱼罐头</li>
+        <li>狮子头</li>
+    </ul>
+    <script>
+        // 闭包就是能够读取其他函数内部变量的函数。
+
+        function fn() {
+            var num = 10
+            return function () {
+                console.log(num);
+            }
+        }
+        var f = fn()
+        f()
+
+        var ul = document.querySelector('ul')
+        var lis = document.querySelectorAll('li')
+        //静态添加
+        // for (var i =0;i<lis.length;i++){
+        //      lis[i].index=i  //静态添加
+        //     lis[i].onclick=function(){
+        //             console.log(this.index);
+
+
+
+        //     }
+
+        // }
+
+
+        // 利用闭包实现点击log索引号,每次循环都创建一个立即执行函数，当i=0时，最下面小括号里的i接收，然后传给function小括号里的i
+        for (var i = 0; i < lis.length; i++) {
+            (function (i) {
+                lis[i].onclick = function () {
+                    console.log(i);
+                }
+            })(i)
+
+        }
+
+        
+
+    </script>
+
+
+</body>
+
+</html>

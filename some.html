@@ -18,6 +18,23 @@
         //filter是把所有符合条件的筛选出来，有两个参数
         //some是只要碰到一个满足条件的就退出遍历，只有一个参数
        
+        
+        //call改变this指向
+        function Father(uname,age){
+            this.uname=uname,
+            this.age=age
+        }
+
+        function Son(uname,age){
+                Father.call(this,uname,age)
+
+        }
+
+        console.log(new Son('ldh',12));
+   
+        //apply
+        var arr=[52,69,44,88]
+        console.log(Math.max.apply(null,arr))//null一定要写，不能少，意思是不改变指向
 
 
 
