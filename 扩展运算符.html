@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //利用...扩展运算符解构
+        let arr=['a','b','c']
+        //  ...a代表的是  'a','b','c'
+        console.log(arr);//输出的是一个数组
+        console.log(...arr); //相当于console.log('a','b','c')  输出的是 a b c
+    
+
+
+        //利用扩展运算符合并的两种方式
+        var arr1=[1,2,3]
+        var arr2=[4,5,6]
+        var newArr=[...arr1,...arr2]
+        console.log(newArr);  // [1,2,3,4,5,6]
+        arr1.push(...arr2)
+        console.log(arr1);   // [1,2,3,4,5,6]
+        var newArr1=arr1.push(...arr2)
+        console.log(newArr1);   //是9，push返回的是新数组的length
+
+        //利用扩展运算符将伪数组转化成真数组
+        var divs= document.querySelectorAll('div')
+        ...divs
+
+        
+
+    </script>
+</body>
+</html>

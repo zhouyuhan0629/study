@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var taxi=(function(){
+                var start=13;
+                var perkm=5;
+                var total
+                //return的居然是一个对象
+                return {
+                    normal:function(a){
+                        if(a<=5){
+                            total=start
+                        }
+                        else{
+                            total=5*(a-5)+start
+
+                        }
+                        return total
+
+                    },
+                    congestion:function(a){
+                        if(a<=5){
+                            total=start
+                        }
+                        else{
+                            total=5*(a-5)+start
+
+                        }
+                        return total+10
+
+                    }
+                }
+        })()
+        // console.log(taxi.normal(6.5));
+        console.log(typeof taxi);
+
+        //!!!!!如果taxi后面不跟立即执行函数的话就是返回一个普通函数那么taxi.normal没有意义，但如果是立即执行函数先返回了一个对象，就可以用了
+
+
+
+    </script>
+</body>
+</html>

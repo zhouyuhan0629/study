@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .right {
+            color: green;
+        }
+        .wrong {
+            color: red;
+        }
+
+    </style>
+</head>
+<body>
+    <input type="text" name="" id="" class="text">
+    <input type="submit" value="提交" class="submit">
+    <span></span>
+    
+    <input type="text" name="" id="" class="textphone">
+    <script>
+        var rg = /^[abc]$/
+        console.log(rg.test('1a1'));
+        var reg=/^[a-zA-Z0-9]{0,555}$/
+        console.log(reg.test('c5'));
+        var text =document.querySelector('.text')
+        var submit=document.querySelector('submit')
+        var span=document.querySelector('span')
+        var phone =document.querySelector('.phone')
+        var textphone=document.querySelector('.textphone')
+        text.onblur=function(){
+            if(reg.test(this.value)){
+                span.innerHTML='您输入的正确',
+                span.className='right'
+            } 
+            else{
+                span.innerHTML='您输入的错误',
+                span.className='wrong'
+            }
+
+
+        }
+        var phonereg = /^\d{3,4}-\d{7,8}$/
+        /* 输入手机号021-54648454 用正则验证
+        var phonereg = /[\d{3,4}-\d{7,8}]$/*/
+        textphone.onblur=function(){
+
+            console.log(phonereg.test(textphone.value));
+        }
+       
+    </script>
+</body>
+</html>
